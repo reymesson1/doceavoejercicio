@@ -6,13 +6,16 @@
     </li>
     <li>
       <mat-form-field>
-        <input matInput [(ngModel)]="masterData.debit" name="debit" placeholder="Debit" type="number">
+        <input matInput [(ngModel)]="masterData.value" name="value" placeholder="Value" type="number">
       </mat-form-field>
     </li>
     <li>
-      <mat-form-field>
-        <input matInput [(ngModel)]="masterData.credit" name="credit" placeholder="Credit" type="number">
-      </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Type" [(ngModel)]="masterData.type" name="type" >
+              <mat-option value="debit">Debit</mat-option>
+              <mat-option value="credit">Credit</mat-option>
+            </mat-select>
+          </mat-form-field>    
     </li>
     <li>
       <button mat-raised-button (click)="onNoClick()">Pick one</button>
