@@ -42,22 +42,24 @@ import {
 import { Routes, RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { MomentModule } from 'angular2-moment';
 
 import { HomeComponent } from "./home/home.component";
 import { MasterComponent } from "./master/master.component";
 import { DetailComponent } from "./detail/detail.component";
 import { RegistrationComponent } from "./admin/registration.component";  
 import { LoginComponent } from "./admin/login.component";
+import { ViewComponent } from "./master/view.component";
 import { RestSourceData }  from "./model/rest.datasource";
 
 import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-dialog";
 
 @NgModule({ 
   declarations: [
-    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog
+    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
+    MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
     MatDialogModule, MatMenuModule,
@@ -67,6 +69,8 @@ import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-di
       { path: "detail", component: DetailComponent },
       { path: "registration", component: RegistrationComponent },
       { path: "login", component: LoginComponent },
+      { path: "view", component: ViewComponent },
+      { path: "view/:id", component: ViewComponent },
       { path: "**", redirectTo: '/master' }  
     ])
   ],

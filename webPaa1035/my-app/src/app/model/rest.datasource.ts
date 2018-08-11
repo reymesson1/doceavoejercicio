@@ -21,11 +21,12 @@ export class RestSourceData{
 
   postMessage(message) {
               
-      this.http.post<any>(this.authPath +'/post', message).subscribe(res =>{
-          this.messages = res                
-      })
-      this.route.navigateByUrl("/detail");
       this.messages.push(message);
+      this.http.post<any>(this.authPath +'/post', message).subscribe(res =>{
+        this.messages = res                
+      })
+      this.route.navigate(['/view/',message.position]);
+
   }
 
   get token(){

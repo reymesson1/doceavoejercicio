@@ -17,7 +17,7 @@ export interface DialogData {
 })
 export class MasterComponent {
   title = 'my-app';  
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
+  displayedColumns: string[] = ['position', 'date', 'name', 'weight', 'symbol','actions'];
   animal: string;
   name: string;
 
