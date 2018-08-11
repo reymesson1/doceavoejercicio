@@ -3,6 +3,8 @@ import { VERSION } from '@angular/material';
 import { FormControl, Validators, ControlContainer, FormGroup } from '@angular/forms';
 import { map, filter } from 'rxjs/operators';
 
+import { RestSourceData } from "../model/rest.datasource";
+
 @Component({
   selector: 'registration',
   templateUrl: './registration.component.html',
@@ -11,5 +13,15 @@ import { map, filter } from 'rxjs/operators';
 export class RegistrationComponent {
   @Input() control: FormControl;
   @Input() placeholder: string;
+
+  registerData = {}
+
+  constructor(private data : RestSourceData){}
+
+  Post(){
+    
+    this.data.sendUserRegistration(this.registerData);
+    this.registerData = {};
+  }
   
 }

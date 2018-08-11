@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestSourceData } from "../model/rest.datasource";
 
 @Component({
   selector: 'login',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   title = 'my-app';
+
+  constructor(private data: RestSourceData){}
+
+  loginData = {};
+
+
+  Post(){
+    this.data.loginUser(this.loginData);
+  }
 }

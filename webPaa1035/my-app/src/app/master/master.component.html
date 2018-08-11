@@ -1,1 +1,95 @@
-<h1>Master</h1>
+<div class="row">
+  <mat-card>  
+    
+    <div class="row">
+      <div class="col-md-4">
+        &nbsp;
+      </div>
+      <div class="col-md-4">
+        <mat-icon style="font-size: 48px;color:black;">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="font-size: 28px;font-weight:bold;color:black;">35%</span>
+        <h5 style="margin-left:10%;margin-top:0%;color:black;">Growth</h5>
+      </div>
+      <div class="col-md-4">      
+        <mat-icon style="font-size: 48px;color:black;">group</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="margin-left:3%;font-size: 28px;font-weight:bold;color:black;">12%</span>
+        <h5 style="margin-left:13%;margin-top:0%;color:black;">New Users</h5>
+      </div>
+    </div>    
+    <div class="row">
+      <div class="col-md-4">
+        &nbsp;
+      </div>
+      <div class="col-md-4">      
+        <mat-icon style="font-size: 48px;color:black;">monetization_on</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">8,123</span>
+        <h5 style="margin-left:12%;margin-top:0%;color:black;">Profit</h5>
+      </div>
+      <div class="col-md-4">      
+        <mat-icon style="font-size: 48px;color:black;">shopping_cart</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">350</span>
+        <h5 style="margin-left:12%;margin-top:0%;color:black;">Sales</h5>
+      </div>
+    </div>
+    
+  </mat-card>
+</div>
+
+<br/>
+<div class="row">
+  <mat-card>
+    <table mat-table [dataSource]="data.messages" class="mat-elevation-z8">
+      
+      <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+        
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+        
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Debit </th>
+          <td mat-cell *matCellDef="let element"> {{element.debit}} </td>
+        </ng-container>
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Credit </th>
+          <td mat-cell *matCellDef="let element"> {{element.credit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+             <mat-icon>input</mat-icon>&nbsp;
+             <mat-icon>edit</mat-icon>&nbsp;
+             <mat-icon>input</mat-icon>
+          </td>
+        </ng-container>
+        
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+      </table>
+    
+  </mat-card>
+
+</div>
+
+
+
+<div class="row">
+    <div class="pull-right">
+      <button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
+    </div>
+  </div>

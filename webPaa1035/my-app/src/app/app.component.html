@@ -1,18 +1,25 @@
-<mat-toolbar style="z-index: 10" class="mat-elevation-z4">
-  My App&nbsp;&nbsp;
-    <div>
-        <button mat-button routerLink="/home" >Home</button>
+<div class="row">
+  <mat-toolbar color="primary" style="z-index: 10" class="mat-elevation-z4">
+      &nbsp;&nbsp;My App&nbsp;&nbsp;
+    <div class="col-md-4">        
         <button mat-button routerLink="/master">Master</button>
         <button mat-button routerLink="/detail">Detail</button>
-        <button mat-button>List</button>
-        <span style="margin-right:78%;" ></span>          
-        <button mat-button routerLink="/registration" matTooltip="Registration"><mat-icon>assignment</mat-icon></button>
-        <button mat-button routerLink="/login" matTooltip="Login"><mat-icon>account_circle</mat-icon></button>
-        <!-- <button mat-button color="error" routerLink="/registration" matTooltip="Registration"><mat-icon>assignment</mat-icon></button>
-        <button mat-button color="secundary" routerLink="/login" matTooltip="Login"><mat-icon>account_circle</mat-icon></button>       -->
+      </div>
+      <div class="col-md-4">
+          <button mat-button [matMenuTriggerFor]="menu">Report</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>        
     </div>
-</mat-toolbar>
-
+    <div class="col-md-offset-4">
+        <button *ngIf="!data.isAuthenticated" mat-button routerLink="/registration" matTooltip="Registration"><mat-icon>assignment</mat-icon></button>
+        <button *ngIf="!data.isAuthenticated" mat-button routerLink="/login" matTooltip="Login"><mat-icon>account_circle</mat-icon></button>          
+        <button *ngIf="data.isAuthenticated" mat-button (click)="logoff()" matTooltip="Logout"><mat-icon>input</mat-icon></button>          
+    </div>
+        
+  </mat-toolbar>
+</div>
 <br/>
 <mat-card>  
   <router-outlet></router-outlet>

@@ -41,31 +41,36 @@ import {
 } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from "./home/home.component";
 import { MasterComponent } from "./master/master.component";
 import { DetailComponent } from "./detail/detail.component";
 import { RegistrationComponent } from "./admin/registration.component";  
-import { LoginComponent } from "./admin/login.component";  
+import { LoginComponent } from "./admin/login.component";
+import { RestSourceData }  from "./model/rest.datasource";
+
+import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-dialog";
 
 @NgModule({ 
   declarations: [
-    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent
+    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
+    BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
+    MatDialogModule, MatMenuModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "master", component: MasterComponent },
       { path: "detail", component: DetailComponent },
       { path: "registration", component: RegistrationComponent },
       { path: "login", component: LoginComponent },
-      { path: "**", redirectTo: '/home' }  
+      { path: "**", redirectTo: '/master' }  
     ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [RestSourceData],
+  bootstrap: [AppComponent, DialogOverviewExampleDialog]
 })
 export class AppModule { }

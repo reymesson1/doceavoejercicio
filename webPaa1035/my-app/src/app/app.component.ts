@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestSourceData } from "./model/rest.datasource";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  constructor(private data: RestSourceData){}
+
+  logoff(){
+    this.data.logout();
+  }
 }
