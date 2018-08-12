@@ -8,6 +8,7 @@ export class RestSourceData{
   constructor(private http: HttpClient, private route: Router){}
 
   messages = []
+  dashboard = []
   users = []
   TOKEN_KEY = 'token'
   authPath = 'http://localhost:4201'
@@ -18,6 +19,12 @@ export class RestSourceData{
         this.messages = res;
     })        
   }
+  getDashboard() {      
+
+    this.http.get<any>(this.authPath +'/recapposts').subscribe(res =>{
+        this.dashboard = res;
+    })        
+  }
 
   postMessage(message) {
               
@@ -26,6 +33,7 @@ export class RestSourceData{
         this.messages = res                
       });
       setTimeout(() => {
+          this.getDashboard();
           this.route.navigateByUrl('/detail');
       }, 1000);
       setTimeout(() => {

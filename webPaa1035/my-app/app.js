@@ -20,6 +20,11 @@ app.get('/posts',  async(req, res) =>{
     res.send(posts);
 });
 
+app.get('/recapposts',  async(req, res) =>{    
+    var posts = await Post.aggregate([{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
+    res.send(posts);
+});
+
 app.post('/post', (req, res)=>{
 
     var postData = req.body

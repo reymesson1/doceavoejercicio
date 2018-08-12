@@ -4,13 +4,13 @@
     <div class="row">
       <div class="col-md-3">      
         <mat-icon style="font-size: 48px;color:black;">monetization_on</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">8,123</span>
-        <h5 style="margin-left:12%;margin-top:0%;color:black;">Profit</h5>
+        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">{{totalDebit | currency:'USD'}}</span>
+        <h5 style="margin-left:12%;margin-top:0%;color:black;">Debit</h5>
       </div>
       <div class="col-md-3">      
         <mat-icon style="font-size: 48px;color:black;">shopping_cart</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">350</span>
-        <h5 style="margin-left:12%;margin-top:0%;color:black;">Sales</h5>
+        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">{{totalCredit | currency:'USD' }}</span>
+        <h5 style="margin-left:12%;margin-top:0%;color:black;">Credit</h5>
       </div>
       <div class="col-md-3">
         <mat-icon style="font-size: 48px;color:black;">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;

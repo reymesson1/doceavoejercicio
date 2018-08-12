@@ -20,11 +20,18 @@ export class MasterComponent {
   displayedColumns: string[] = ['position', 'date','name', 'weight', 'symbol','actions'];
   animal: string;
   name: string;
+  totalCredit;
+  totalDebit;
 
   constructor(public dialog: MatDialog, private data: RestSourceData) {}
 
   ngOnInit(){    
     this.data.getMessage();
+    this.data.getDashboard();
+    setTimeout(() => {
+      this.totalCredit = this.data.dashboard[0].total;
+      this.totalDebit = this.data.dashboard[1].total;
+    }, 1000);
   }
   
   openDialog(): void {
