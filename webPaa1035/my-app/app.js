@@ -9,7 +9,9 @@ var mongoose = require('mongoose');
 var User = require('./models/user.js');
 var Post = require('./models/post.js');
 
-app.use(express.static('static'));
+//app.use(express.static('static'));
+app.use(express.static('./dist/my-app'));
+
 app.use(bodyParser.json());
 
 app.use(cors());
