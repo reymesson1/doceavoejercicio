@@ -1008,7 +1008,7 @@ var RestSourceData = /** @class */ (function () {
         this.dashboard = [];
         this.users = [];
         this.TOKEN_KEY = 'token';
-        this.authPath = 'http://localhost:4201';
+        this.authPath = 'http://159.203.156.208:4201';
     }
     RestSourceData.prototype.getMessage = function () {
         var _this = this;
