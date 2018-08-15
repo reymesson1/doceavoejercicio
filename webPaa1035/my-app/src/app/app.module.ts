@@ -71,7 +71,7 @@ import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-di
       { path: "login", component: LoginComponent },
       { path: "view", component: ViewComponent },
       { path: "view/:id", component: ViewComponent },
-      { path: "**", redirectTo: '/login' }  
+      { path: "**", redirectTo: '/master' }  
     ])
   ],
   providers: [RestSourceData],
