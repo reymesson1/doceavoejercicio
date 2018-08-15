@@ -90,9 +90,8 @@
 </div>
 
 
-
-<div class="row">
-    <div class="pull-right">
-      <button mat-fab color="primary" (click)="openDialog()" *ngIf="data.isAuthenticated" ><mat-icon>add</mat-icon></button>
-    </div>
+<div style="position: fixed;top: 87%;right: 5%;" class="row" *ngIf="data.isAuthenticated">
+  <div class="pull-right">
+    <button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
   </div>
+</div>
