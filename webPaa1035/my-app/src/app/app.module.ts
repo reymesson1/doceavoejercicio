@@ -38,9 +38,8 @@ import {
   MatTooltipModule,
   MatOptionModule,  
   MatFormFieldControl,
-  
+  MatSpinner
 } from '@angular/material';
-import { MatSpinner } from '@angular/material';
 
 import { Routes, RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';

@@ -458,7 +458,7 @@ var RegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\"  >\n  <mat-toolbar style=\"z-index: 10\" class=\"mat-elevation-z4\" *ngIf=\"data.isAuthenticated\" >\n      &nbsp;&nbsp;My App&nbsp;&nbsp;\n    <div class=\"col-md-4\">        \n        <button mat-button routerLink=\"/master\">Master</button>\n        <button mat-button routerLink=\"/detail\">Detail</button>\n      </div>\n      <div class=\"col-md-4\">\n          <button mat-button [matMenuTriggerFor]=\"menu\">Report</button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Item 1</button>\n            <button mat-menu-item>Item 2</button>\n          </mat-menu>        \n    </div>\n    <div class=\"col-md-offset-4\">\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/registration\" matTooltip=\"Registration\"><mat-icon>assignment</mat-icon></button>\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/login\" matTooltip=\"Login\"><mat-icon>account_circle</mat-icon></button>          \n        <button *ngIf=\"data.isAuthenticated\" mat-button (click)=\"logoff()\" matTooltip=\"Logout\"><mat-icon>input</mat-icon></button>          \n    </div>\n        \n  </mat-toolbar>\n  <br/>\n  <div class=\"row\">\n    <mat-card *ngIf=\"data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n  <div class=\"row\" style=\"margin-top:10%;\" >\n    <mat-card *ngIf=\"!data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\"  >\n  <mat-toolbar style=\"z-index: 10\" color=\"primary\" class=\"mat-elevation-z4\" *ngIf=\"data.isAuthenticated\" >\n      &nbsp;&nbsp;My App&nbsp;&nbsp;\n    <div class=\"col-md-4\">        \n        <button mat-button routerLink=\"/master\">Master</button>\n        <button mat-button routerLink=\"/detail\">Detail</button>\n      </div>\n      <div class=\"col-md-4\">\n          <button mat-button [matMenuTriggerFor]=\"menu\">Report</button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Item 1</button>\n            <button mat-menu-item>Item 2</button>\n          </mat-menu>        \n    </div>\n    <div class=\"col-md-offset-4\">\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/registration\" matTooltip=\"Registration\"><mat-icon>assignment</mat-icon></button>\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/login\" matTooltip=\"Login\"><mat-icon>account_circle</mat-icon></button>          \n        <button *ngIf=\"data.isAuthenticated\" mat-button (click)=\"logoff()\" matTooltip=\"Logout\"><mat-icon>input</mat-icon></button>          \n    </div>\n        \n  </mat-toolbar>\n  <br/>\n  <div class=\"row\">\n    <mat-card *ngIf=\"data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n  <div class=\"row\" style=\"margin-top:10%;\" >\n    <mat-card *ngIf=\"!data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -555,7 +555,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -880,10 +879,10 @@ var MasterComponent = /** @class */ (function () {
             _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.data.messages);
             _this.dataSource.sort = _this.sort;
             _this.dataSource.paginator = _this.paginator;
-        }, 1000);
+        }, 2000);
         setTimeout(function () {
             _this.spinner = false;
-        }, 1000);
+        }, 2000);
     };
     MasterComponent.prototype.openDialog = function () {
         var _this = this;
@@ -1031,8 +1030,9 @@ var RestSourceData = /** @class */ (function () {
         this.messages = [];
         this.dashboard = [];
         this.TOKEN_KEY = 'token';
-        this.authPath = 'http://localhost:4201';
+        this.authPath = 'http://159.203.156.208:4201';
     }
+    //authPath = 'http://localhost:4201'
     RestSourceData.prototype.getMessage = function () {
         var _this = this;
         this.http.get(this.authPath + '/posts/' + this.token).subscribe(function (res) {

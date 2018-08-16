@@ -43,11 +43,11 @@ export class MasterComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(this.data.messages);
       this.dataSource.sort = this.sort;  
       this.dataSource.paginator = this.paginator;
-    }, 1000);
+    }, 2000);
 
     setTimeout(() => {
       this.spinner = false;
-    }, 1000);
+    }, 2000);
 
 
   }
