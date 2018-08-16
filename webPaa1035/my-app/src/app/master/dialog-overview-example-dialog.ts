@@ -26,7 +26,7 @@ export class DialogOverviewExampleDialog {
   onNoClick(): void {
       this.masterData["position"] = this.nextDay.getTime();
       this.masterData["date"] = this.nextDay.toLocaleDateString() + " " + this.nextDay.toLocaleTimeString();
-      console.log(this.masterData );
+      this.masterData["token"] = this.dataRef.token;      
       this.dataRef.postMessage(this.masterData);
       this.dialogRef.close();
   }

@@ -8,20 +8,19 @@ export class RestSourceData{
   constructor(private http: HttpClient, private route: Router){}
 
   messages = []
-  dashboard = []
-  users = []
+  dashboard = []  
   TOKEN_KEY = 'token'
-  authPath = 'http://159.203.156.208:4201'
+  authPath = 'http://localhost:4201'
 
   getMessage() {      
 
-    this.http.get<any>(this.authPath +'/posts').subscribe(res =>{
+    this.http.get<any>(this.authPath +'/posts/'+this.token).subscribe(res =>{
         this.messages = res;
     })        
   }
   getDashboard() {      
-
-    this.http.get<any>(this.authPath +'/recapposts').subscribe(res =>{
+    
+    this.http.get<any>(this.authPath +'/recapposts/'+this.token).subscribe(res =>{
         this.dashboard = res;
     })        
   }
@@ -51,11 +50,12 @@ export class RestSourceData{
 
   logout(){
       localStorage.removeItem(this.TOKEN_KEY);
+      this.route.navigateByUrl('/login');
   }
 
   loginUser(loginData) {
         this.http.post<any>(this.authPath + '/login', loginData).subscribe(res =>{
-            console.log(res);
+            
             localStorage.setItem(this.TOKEN_KEY, res.token)
             if(this.isAuthenticated){
                 this.route.navigateByUrl("/")
@@ -67,7 +67,7 @@ export class RestSourceData{
 
   sendUserRegistration(regData) {
     this.http.post<any>(this.authPath + '/register', regData).subscribe(res =>{ 
-        console.log(res) 
+
         localStorage.setItem(this.TOKEN_KEY, res.token)  
         if(this.isAuthenticated){
             this.route.navigateByUrl("/")

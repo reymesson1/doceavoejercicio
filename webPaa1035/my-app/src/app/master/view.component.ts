@@ -13,6 +13,7 @@ export class ViewComponent {
 
   constructor(private route:ActivatedRoute,private data: RestSourceData){
     this.data.getMessage();
+        
   }
 
   ngOnInit(){
@@ -21,8 +22,7 @@ export class ViewComponent {
       let filteredData = this.data.messages.filter(
         (master) => master.position.indexOf(this.position) !== -1
       );
-      this.masterData = filteredData[0];
-      console.log(this.position);
+      this.masterData = filteredData[0];      
     }
   }
 

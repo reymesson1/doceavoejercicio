@@ -1,33 +1,35 @@
-<mat-card style="width: 40%;text-align: center;margin-left: 28%;">
-    <h1>Login</h1>
-    <form (ngSubmit)="Post()">
-    <div class="row">
+<div class="row">
+  <mat-card style="width: 40%;text-align: center;margin-left: 28%;">
+      <h1>Login</h1>
+      <form (ngSubmit)="Post()">
+      <div class="row">
 
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-icon>person</mat-icon>
-          </td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Username" [(ngModel)]="loginData.username" name="username">
-          </mat-form-field></td>        
-        </tr>        
-        <tr>
-          <td>
-            <mat-icon>lock</mat-icon>
-          </td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Password" type="password" [(ngModel)]="loginData.password" name="password">
-          </mat-form-field></td>        
-        </tr>
-        <tr>&nbsp;</tr>        
-      </table>         
-    </div>
-    <div class="row">
-      <div class="pull-right">
-        <button mat-button style="background-color:lightgray">Cancel</button>&nbsp;
-        <button mat-button style="background-color:lightgray" type="submit">Login</button>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-icon>person</mat-icon>
+            </td>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="loginData.username" name="username">
+            </mat-form-field></td>        
+          </tr>        
+          <tr>
+            <td>
+              <mat-icon>lock</mat-icon>
+            </td>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" [(ngModel)]="loginData.password" name="password">
+            </mat-form-field></td>        
+          </tr>
+          <tr>&nbsp;</tr>        
+        </table>         
       </div>
-    </div>    
-  </form>
-</mat-card>
+      <div class="row">
+        <div class="pull-right">
+          <button mat-button style="background-color:lightgray">Cancel</button>&nbsp;
+          <button mat-button style="background-color:lightgray" type="submit">Login</button>
+        </div>
+      </div>    
+    </form>
+  </mat-card>
+</div>

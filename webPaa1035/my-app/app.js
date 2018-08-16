@@ -17,22 +17,34 @@ app.use(bodyParser.json());
 app.use(cors());
 app.options('*', cors());
 
-app.get('/posts',  async(req, res) =>{    
-    var posts = await Post.find({})
+app.get('/posts/:id',  async(req, res) =>{
+        
+    var decode = jwt.decode(req.params.id,'123');
+    var author = decode.sub
+    var posts = await Post.find({author})
     res.send(posts);
 });
 
-app.get('/recapposts',  async(req, res) =>{    
-    var posts = await Post.aggregate([{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
+app.get('/recapposts/:id',  async(req, res) =>{
+
+    var decode = jwt.decode(req.params.id,'123');
+    var author = decode.sub    
+    //var posts = await Post.aggregate([{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
+
+    const ObjectId = mongoose.Types.ObjectId;    
+
+    var posts = await Post.aggregate([{"$match":{"author":ObjectId(author)}},{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
+    
     res.send(posts);
 });
 
 app.post('/post', (req, res)=>{
 
-    var postData = req.body
-    postData.author = '5ae1a7105a926e0f84230d61'
+    var postData = req.body    
+    var decode = jwt.decode(req.body.token,'123')
+    postData.author = decode.sub
 
-    var post = new Post(postData);
+    var post = new Post(postData)
 
     post.save((err, result)=>{
         if(err){
@@ -67,7 +79,7 @@ app.post('/login', async (req, res)=>{
 
     var userData = req.body;
     var user = await User.findOne({username: userData.username});
-    console.log(user);
+    
     if(!user){
         return res.status(401).send({message: 'Email or Password Invalid'})
     }

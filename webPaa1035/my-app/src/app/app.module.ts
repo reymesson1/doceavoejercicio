@@ -38,7 +38,10 @@ import {
   MatTooltipModule,
   MatOptionModule,  
   MatFormFieldControl,
+  
 } from '@angular/material';
+import { MatSpinner } from '@angular/material';
+
 import { Routes, RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,19 +57,21 @@ import { RestSourceData }  from "./model/rest.datasource";
 
 import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-dialog";
 
+import { AuthGuard } from "./services/auth.guard.service";
+
 @NgModule({ 
   declarations: [
-    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent
+    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, MatSpinner
   ],
   imports: [
     MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
-    MatDialogModule, MatMenuModule,
+    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
-      { path: "master", component: MasterComponent },
-      { path: "detail", component: DetailComponent },
+      { path: "master", component: MasterComponent, canActivate: [ AuthGuard ] },      
+      { path: "detail", component: DetailComponent, canActivate: [ AuthGuard ] },
       { path: "registration", component: RegistrationComponent },
       { path: "login", component: LoginComponent },
       { path: "view", component: ViewComponent },
@@ -74,7 +79,7 @@ import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-di
       { path: "**", redirectTo: '/master' }  
     ])
   ],
-  providers: [RestSourceData],
+  providers: [RestSourceData, AuthGuard],
   bootstrap: [AppComponent, DialogOverviewExampleDialog]
 })
 export class AppModule { }
