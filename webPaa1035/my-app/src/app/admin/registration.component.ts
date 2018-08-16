@@ -14,7 +14,7 @@ export class RegistrationComponent {
   @Input() control: FormControl;
   @Input() placeholder: string;
 
-  registerData = {}
+  registerData : any = {}
 
   constructor(private data : RestSourceData){}
 

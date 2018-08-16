@@ -9,7 +9,7 @@ import { RestSourceData } from "./model/rest.datasource";
 export class AppComponent {
   title = 'my-app';
 
-  constructor(private data: RestSourceData){}
+  constructor(public data: RestSourceData){}
 
   logoff(){
     this.data.logout();

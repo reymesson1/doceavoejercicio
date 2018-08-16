@@ -21,7 +21,7 @@ export class DialogOverviewExampleDialog {
       this.nextDay = new Date();
     }
     
-  masterData = {}; 
+  masterData : any = {}; 
 
   onNoClick(): void {
       this.masterData["position"] = this.nextDay.getTime();

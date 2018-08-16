@@ -4,7 +4,7 @@ import { DialogOverviewExampleDialog } from "./dialog-overview-example-dialog";
 import { RestSourceData } from 'src/app/model/rest.datasource';
 import { DataSource } from '@angular/cdk/collections';
 import {Sort} from '@angular/material';
-import { MatSpinner } from '@angular/material';
+// import { MatSpinner } from '@angular/material';
 import {MatSort,MatPaginator, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 
@@ -30,7 +30,7 @@ export class MasterComponent implements OnInit {
   spinner: boolean = true;
   dataSource;
     
-  constructor(public dialog: MatDialog, private data: RestSourceData,private route:Router,) {}
+  constructor(public dialog: MatDialog, public data: RestSourceData,private route:Router,) {}
       
     ngOnInit(){ 
     

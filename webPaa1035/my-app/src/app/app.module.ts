@@ -22,7 +22,6 @@ import {
   MatNativeDateModule,
   MatPaginatorModule,
   MatProgressBarModule,
-  MatProgressSpinnerModule,
   MatRadioModule,
   MatRippleModule,
   MatSelectModule,
@@ -38,8 +37,9 @@ import {
   MatTooltipModule,
   MatOptionModule,  
   MatFormFieldControl,
-  MatSpinner
+  // MatSpinner
 } from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { Routes, RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -60,13 +60,13 @@ import { AuthGuard } from "./services/auth.guard.service";
 
 @NgModule({ 
   declarations: [
-    AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, MatSpinner
+     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, //MatSpinner
   ],
   imports: [
     MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
-    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule,
+    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule, MatProgressSpinnerModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "master", component: MasterComponent, canActivate: [ AuthGuard ] },      

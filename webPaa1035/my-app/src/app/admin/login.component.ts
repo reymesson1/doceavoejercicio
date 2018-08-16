@@ -11,7 +11,7 @@ export class LoginComponent {
 
   constructor(private data: RestSourceData){}
 
-  loginData = {};
+  loginData : any = {};
 
 
   Post(){
