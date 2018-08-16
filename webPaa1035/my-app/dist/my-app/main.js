@@ -310,7 +310,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card style=\"width: 40%;text-align: center;margin-left: 28%;\">\r\n    <h1>Login</h1>\r\n    <form (ngSubmit)=\"Post()\">\r\n    <div class=\"row\">\r\n\r\n      <table class=\"example-full-width\" cellspacing=\"0\">\r\n        <tr>\r\n          <td>\r\n            <mat-icon>person</mat-icon>\r\n          </td>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Username\" [(ngModel)]=\"loginData.username\" name=\"username\">\r\n          </mat-form-field></td>        \r\n        </tr>        \r\n        <tr>\r\n          <td>\r\n            <mat-icon>lock</mat-icon>\r\n          </td>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Password\" type=\"password\" [(ngModel)]=\"loginData.password\" name=\"password\">\r\n          </mat-form-field></td>        \r\n        </tr>\r\n        <tr>&nbsp;</tr>        \r\n      </table>         \r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"pull-right\">\r\n        <button mat-button style=\"background-color:lightgray\">Cancel</button>&nbsp;\r\n        <button mat-button style=\"background-color:lightgray\" type=\"submit\">Login</button>\r\n      </div>\r\n    </div>    \r\n  </form>\r\n</mat-card>"
+module.exports = "<div class=\"row\">\n  <mat-card style=\"width: 40%;text-align: center;margin-left: 28%;\">\n      <h1>Login</h1>\n      <form (ngSubmit)=\"Post()\">\n      <div class=\"row\">\n\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td>\n              <mat-icon>person</mat-icon>\n            </td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Username\" [(ngModel)]=\"loginData.username\" name=\"username\">\n            </mat-form-field></td>        \n          </tr>        \n          <tr>\n            <td>\n              <mat-icon>lock</mat-icon>\n            </td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Password\" type=\"password\" [(ngModel)]=\"loginData.password\" name=\"password\">\n            </mat-form-field></td>        \n          </tr>\n          <tr>&nbsp;</tr>        \n        </table>         \n      </div>\n      <div class=\"row\">\n        <div class=\"pull-right\">\n          <button mat-button style=\"background-color:lightgray\">Cancel</button>&nbsp;\n          <button mat-button style=\"background-color:lightgray\" type=\"submit\">Login</button>\n        </div>\n      </div>    \n    </form>\n  </mat-card>\n</div>"
 
 /***/ }),
 
@@ -379,7 +379,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>  \r\n    <h1>Registration</h1>\r\n    <form (ngSubmit)=\"Post()\">\r\n    <div class=\"row\">\r\n\r\n      \r\n        <table class=\"example-full-width\" cellspacing=\"0\"><tr>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"First name\" [(ngModel)]=\"registerData.firstname\" name=\"firstname\">\r\n          </mat-form-field></td>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Last Name\" [(ngModel)]=\"registerData.lastname\" name=\"lastname\">\r\n          </mat-form-field></td>\r\n          </tr>\r\n        </table>\r\n        <table class=\"example-full-width\" cellspacing=\"0\"><tr>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Username\" [(ngModel)]=\"registerData.username\" name=\"username\">\r\n          </mat-form-field></td>\r\n          <td><mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Password\" [(ngModel)]=\"registerData.password\" name=\"password\" type=\"password\">\r\n          </mat-form-field></td>\r\n        </tr>\r\n      </table>\r\n      <p>\r\n        <mat-form-field class=\"example-full-width\">\r\n          <textarea matInput placeholder=\"Address\" [(ngModel)]=\"registerData.address\" name=\"address\" ></textarea>\r\n        </mat-form-field>\r\n        <mat-form-field class=\"example-full-width\">\r\n          <textarea matInput placeholder=\"Address 2\" [(ngModel)]=\"registerData.address2\" name=\"address2\" ></textarea>\r\n        </mat-form-field>\r\n      </p>\r\n      \r\n      <table class=\"example-full-width\" cellspacing=\"0\"><tr>\r\n        <td><mat-form-field class=\"example-full-width\">\r\n          <input matInput placeholder=\"City\" [(ngModel)]=\"registerData.city\" name=\"city\" >\r\n        </mat-form-field></td>\r\n        <td><mat-form-field class=\"example-full-width\">\r\n          <input matInput placeholder=\"State\">\r\n        </mat-form-field></td>\r\n        <td><mat-form-field class=\"example-full-width\">\r\n          <input matInput #postalCode maxlength=\"5\" placeholder=\"Postal Code\" [(ngModel)]=\"registerData.postalcode\" name=\"postalcode\" >\r\n          <mat-hint align=\"end\">{{postalCode.value.length}} / 5</mat-hint>\r\n        </mat-form-field></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <br/>\r\n  <div class=\"row\">\r\n    <div class=\"pull-right\">\r\n      <button mat-button style=\"background-color:lightgray\">Cancel</button>&nbsp;\r\n      <button mat-button style=\"background-color:lightgray\" type=\"submit\" >Register</button>\r\n    </div>\r\n  </div>   \r\n</form>\r\n</mat-card>"
+module.exports = "<mat-card>  \n    <h1>Registration</h1>\n    <form (ngSubmit)=\"Post()\">\n    <div class=\"row\">\n\n      \n        <table class=\"example-full-width\" cellspacing=\"0\"><tr>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"First name\" [(ngModel)]=\"registerData.firstname\" name=\"firstname\">\n          </mat-form-field></td>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Last Name\" [(ngModel)]=\"registerData.lastname\" name=\"lastname\">\n          </mat-form-field></td>\n          </tr>\n        </table>\n        <table class=\"example-full-width\" cellspacing=\"0\"><tr>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Username\" [(ngModel)]=\"registerData.username\" name=\"username\">\n          </mat-form-field></td>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Password\" [(ngModel)]=\"registerData.password\" name=\"password\" type=\"password\">\n          </mat-form-field></td>\n        </tr>\n      </table>\n      <p>\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Address\" [(ngModel)]=\"registerData.address\" name=\"address\" ></textarea>\n        </mat-form-field>\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Address 2\" [(ngModel)]=\"registerData.address2\" name=\"address2\" ></textarea>\n        </mat-form-field>\n      </p>\n      \n      <table class=\"example-full-width\" cellspacing=\"0\"><tr>\n        <td><mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"City\" [(ngModel)]=\"registerData.city\" name=\"city\" >\n        </mat-form-field></td>\n        <td><mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"State\">\n        </mat-form-field></td>\n        <td><mat-form-field class=\"example-full-width\">\n          <input matInput #postalCode maxlength=\"5\" placeholder=\"Postal Code\" [(ngModel)]=\"registerData.postalcode\" name=\"postalcode\" >\n          <mat-hint align=\"end\">{{postalCode.value.length}} / 5</mat-hint>\n        </mat-form-field></td>\n      </tr>\n    </table>\n  </div>\n  <br/>\n  <div class=\"row\">\n    <div class=\"pull-right\">\n      <button mat-button style=\"background-color:lightgray\">Cancel</button>&nbsp;\n      <button mat-button style=\"background-color:lightgray\" type=\"submit\" >Register</button>\n    </div>\n  </div>   \n</form>\n</mat-card>"
 
 /***/ }),
 
@@ -458,7 +458,7 @@ var RegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <mat-toolbar color=\"primary\" style=\"z-index: 10\" class=\"mat-elevation-z4\">\r\n      &nbsp;&nbsp;My App&nbsp;&nbsp;\r\n    <div class=\"col-md-4\">        \r\n        <button mat-button routerLink=\"/master\">Master</button>\r\n        <button mat-button routerLink=\"/detail\">Detail</button>\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n          <button mat-button [matMenuTriggerFor]=\"menu\">Report</button>\r\n          <mat-menu #menu=\"matMenu\">\r\n            <button mat-menu-item>Item 1</button>\r\n            <button mat-menu-item>Item 2</button>\r\n          </mat-menu>        \r\n    </div>\r\n    <div class=\"col-md-offset-4\">\r\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/registration\" matTooltip=\"Registration\"><mat-icon>assignment</mat-icon></button>\r\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/login\" matTooltip=\"Login\"><mat-icon>account_circle</mat-icon></button>          \r\n        <button *ngIf=\"data.isAuthenticated\" mat-button (click)=\"logoff()\" matTooltip=\"Logout\"><mat-icon>input</mat-icon></button>          \r\n    </div>\r\n        \r\n  </mat-toolbar>\r\n</div>\r\n<br/>\r\n<mat-card>  \r\n  <router-outlet></router-outlet>\r\n</mat-card>\r\n"
+module.exports = "<div class=\"row\"  >\n  <mat-toolbar style=\"z-index: 10\" class=\"mat-elevation-z4\" *ngIf=\"data.isAuthenticated\" >\n      &nbsp;&nbsp;My App&nbsp;&nbsp;\n    <div class=\"col-md-4\">        \n        <button mat-button routerLink=\"/master\">Master</button>\n        <button mat-button routerLink=\"/detail\">Detail</button>\n      </div>\n      <div class=\"col-md-4\">\n          <button mat-button [matMenuTriggerFor]=\"menu\">Report</button>\n          <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item>Item 1</button>\n            <button mat-menu-item>Item 2</button>\n          </mat-menu>        \n    </div>\n    <div class=\"col-md-offset-4\">\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/registration\" matTooltip=\"Registration\"><mat-icon>assignment</mat-icon></button>\n        <button *ngIf=\"!data.isAuthenticated\" mat-button routerLink=\"/login\" matTooltip=\"Login\"><mat-icon>account_circle</mat-icon></button>          \n        <button *ngIf=\"data.isAuthenticated\" mat-button (click)=\"logoff()\" matTooltip=\"Logout\"><mat-icon>input</mat-icon></button>          \n    </div>\n        \n  </mat-toolbar>\n  <br/>\n  <div class=\"row\">\n    <mat-card *ngIf=\"data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n  <div class=\"row\" style=\"margin-top:10%;\" >\n    <mat-card *ngIf=\"!data.isAuthenticated\">  \n      <router-outlet></router-outlet>\n    </mat-card>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -548,6 +548,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_view_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./master/view.component */ "./src/app/master/view.component.ts");
 /* harmony import */ var _model_rest_datasource__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./model/rest.datasource */ "./src/app/model/rest.datasource.ts");
 /* harmony import */ var _master_dialog_overview_example_dialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./master/dialog-overview-example-dialog */ "./src/app/master/dialog-overview-example-dialog.ts");
+/* harmony import */ var _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/auth.guard.service */ "./src/app/services/auth.guard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -572,23 +573,25 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _master_master_component__WEBPACK_IMPORTED_MODULE_11__["MasterComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_12__["DetailComponent"], _admin_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"], _admin_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"], _master_dialog_overview_example_dialog__WEBPACK_IMPORTED_MODULE_17__["DialogOverviewExampleDialog"], _master_view_component__WEBPACK_IMPORTED_MODULE_15__["ViewComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _master_master_component__WEBPACK_IMPORTED_MODULE_11__["MasterComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_12__["DetailComponent"], _admin_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"], _admin_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"], _master_dialog_overview_example_dialog__WEBPACK_IMPORTED_MODULE_17__["DialogOverviewExampleDialog"], _master_view_component__WEBPACK_IMPORTED_MODULE_15__["ViewComponent"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSpinner"]
             ],
             imports: [
                 angular2_moment__WEBPACK_IMPORTED_MODULE_9__["MomentModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatGridListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatOptionModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSliderModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatMenuModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatProgressBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSortModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginatorModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                     { path: "home", component: _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"] },
-                    { path: "master", component: _master_master_component__WEBPACK_IMPORTED_MODULE_11__["MasterComponent"] },
-                    { path: "detail", component: _detail_detail_component__WEBPACK_IMPORTED_MODULE_12__["DetailComponent"] },
+                    { path: "master", component: _master_master_component__WEBPACK_IMPORTED_MODULE_11__["MasterComponent"], canActivate: [_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
+                    { path: "detail", component: _detail_detail_component__WEBPACK_IMPORTED_MODULE_12__["DetailComponent"], canActivate: [_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
                     { path: "registration", component: _admin_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"] },
                     { path: "login", component: _admin_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"] },
                     { path: "view", component: _master_view_component__WEBPACK_IMPORTED_MODULE_15__["ViewComponent"] },
@@ -596,7 +599,7 @@ var AppModule = /** @class */ (function () {
                     { path: "**", redirectTo: '/master' }
                 ])
             ],
-            providers: [_model_rest_datasource__WEBPACK_IMPORTED_MODULE_16__["RestSourceData"]],
+            providers: [_model_rest_datasource__WEBPACK_IMPORTED_MODULE_16__["RestSourceData"], _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _master_dialog_overview_example_dialog__WEBPACK_IMPORTED_MODULE_17__["DialogOverviewExampleDialog"]]
         })
     ], AppModule);
@@ -672,7 +675,7 @@ var DetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Home</h1>\r\n\r\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\r\n  \r\n  <!--- Note that these columns can be defined in any order.\r\n    The actual rendered columns are set as a property on the row definition\" -->\r\n    \r\n    <!-- Position Column -->\r\n    <ng-container matColumnDef=\"position\">\r\n      <th mat-header-cell *matHeaderCellDef> No. </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\r\n    </ng-container>\r\n    \r\n    <!-- Name Column -->\r\n    <ng-container matColumnDef=\"name\">\r\n      <th mat-header-cell *matHeaderCellDef> Name </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\r\n    </ng-container>\r\n    \r\n    <!-- Weight Column -->\r\n    <ng-container matColumnDef=\"weight\">\r\n      <th mat-header-cell *matHeaderCellDef> Weight </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.weight}} </td>\r\n    </ng-container>\r\n    \r\n    <!-- Symbol Column -->\r\n    <ng-container matColumnDef=\"symbol\">\r\n      <th mat-header-cell *matHeaderCellDef> Symbol </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.symbol}} </td>\r\n    </ng-container>\r\n    \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table>\r\n\r\n  "
+module.exports = "<h1>Home</h1>\n\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n  \n  <!--- Note that these columns can be defined in any order.\n    The actual rendered columns are set as a property on the row definition\" -->\n    \n    <!-- Position Column -->\n    <ng-container matColumnDef=\"position\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n    </ng-container>\n    \n    <!-- Name Column -->\n    <ng-container matColumnDef=\"name\">\n      <th mat-header-cell *matHeaderCellDef> Name </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n    </ng-container>\n    \n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"weight\">\n      <th mat-header-cell *matHeaderCellDef> Weight </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.weight}} </td>\n    </ng-container>\n    \n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"symbol\">\n      <th mat-header-cell *matHeaderCellDef> Symbol </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.symbol}} </td>\n    </ng-container>\n    \n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n  </table>\n\n  "
 
 /***/ }),
 
@@ -744,7 +747,7 @@ var ELEMENT_DATA = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ol>\r\n    <li>\r\n      <mat-form-field>\r\n        <input matInput [(ngModel)]=\"masterData.description\" name=\"description\" placeholder=\"Description\">\r\n      </mat-form-field>\r\n    </li>\r\n    <li>\r\n      <mat-form-field>\r\n        <input matInput [(ngModel)]=\"masterData.value\" name=\"value\" placeholder=\"Value\" type=\"number\">\r\n      </mat-form-field>\r\n    </li>\r\n    <li>\r\n        <mat-form-field>\r\n            <mat-select placeholder=\"Type\" [(ngModel)]=\"masterData.type\" name=\"type\" >\r\n              <mat-option value=\"debit\">Debit</mat-option>\r\n              <mat-option value=\"credit\">Credit</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>    \r\n    </li>\r\n    <li>\r\n      <button mat-raised-button (click)=\"onNoClick()\">Save</button>\r\n    </li>\r\n</ol>"
+module.exports = "<ol>\n    <li>\n      <mat-form-field>\n        <input matInput [(ngModel)]=\"masterData.description\" name=\"description\" placeholder=\"Description\">\n      </mat-form-field>\n    </li>\n    <li>\n      <mat-form-field>\n        <input matInput [(ngModel)]=\"masterData.value\" name=\"value\" placeholder=\"Value\" type=\"number\">\n      </mat-form-field>\n    </li>\n    <li>\n        <mat-form-field>\n            <mat-select placeholder=\"Type\" [(ngModel)]=\"masterData.type\" name=\"type\" >\n              <mat-option value=\"debit\">Debit</mat-option>\n              <mat-option value=\"credit\">Credit</mat-option>\n            </mat-select>\n          </mat-form-field>    \n    </li>\n    <li>\n      <button mat-raised-button (click)=\"onNoClick()\">Save</button>\n    </li>\n</ol>"
 
 /***/ }),
 
@@ -787,7 +790,7 @@ var DialogOverviewExampleDialog = /** @class */ (function () {
     DialogOverviewExampleDialog.prototype.onNoClick = function () {
         this.masterData["position"] = this.nextDay.getTime();
         this.masterData["date"] = this.nextDay.toLocaleDateString() + " " + this.nextDay.toLocaleTimeString();
-        console.log(this.masterData);
+        this.masterData["token"] = this.dataRef.token;
         this.dataRef.postMessage(this.masterData);
         this.dialogRef.close();
     };
@@ -813,7 +816,7 @@ var DialogOverviewExampleDialog = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <mat-card>  \r\n    \r\n    <div class=\"row\">\r\n      <div class=\"col-md-3\">      \r\n        <mat-icon style=\"font-size: 48px;color:black;\">monetization_on</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\r\n        <span style=\"margin-left:2%;font-size: 28px;font-weight:bold;color:black;\">{{totalDebit | currency:'USD'}}</span>\r\n        <h5 style=\"margin-left:12%;margin-top:0%;color:black;\">Debit</h5>\r\n      </div>\r\n      <div class=\"col-md-3\">      \r\n        <mat-icon style=\"font-size: 48px;color:black;\">shopping_cart</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\r\n        <span style=\"margin-left:2%;font-size: 28px;font-weight:bold;color:black;\">{{totalCredit | currency:'USD' }}</span>\r\n        <h5 style=\"margin-left:12%;margin-top:0%;color:black;\">Credit</h5>\r\n      </div>\r\n      <div class=\"col-md-3\">\r\n        <mat-icon style=\"font-size: 48px;color:black;\">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\r\n        <span style=\"font-size: 28px;font-weight:bold;color:black;\">35%</span>\r\n        <h5 style=\"margin-left:10%;margin-top:0%;color:black;\">Growth</h5>\r\n      </div>\r\n      <div class=\"col-md-3\">      \r\n        <mat-icon style=\"font-size: 48px;color:black;\">group</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\r\n        <span style=\"margin-left:3%;font-size: 28px;font-weight:bold;color:black;\">12%</span>\r\n        <h5 style=\"margin-left:13%;margin-top:0%;color:black;\">New Users</h5>\r\n      </div>\r\n    </div>    \r\n    \r\n  </mat-card>\r\n</div>\r\n\r\n<br/>\r\n<div class=\"row\">\r\n  <mat-card>\r\n    <table mat-table [dataSource]=\"data.messages\" class=\"mat-elevation-z8\">\r\n      \r\n      <!--- Note that these columns can be defined in any order.\r\n        The actual rendered columns are set as a property on the row definition\" -->\r\n        \r\n        <!-- Position Column -->\r\n        <ng-container matColumnDef=\"position\">\r\n          <th mat-header-cell *matHeaderCellDef> No. </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"date\">\r\n          <th mat-header-cell *matHeaderCellDef> Date </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.date}} </td>\r\n        </ng-container>\r\n        \r\n        <!-- Name Column -->\r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef> Description </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n        </ng-container>\r\n        \r\n        <!-- Weight Column -->\r\n        <ng-container matColumnDef=\"weight\">\r\n          <th mat-header-cell *matHeaderCellDef> Debit </th>\r\n          <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"element.type=='debit'\"> {{element.value | currency:'USD' }} </span> </td>\r\n        </ng-container>\r\n        \r\n        <!-- Symbol Column -->\r\n        <ng-container matColumnDef=\"symbol\">\r\n          <th mat-header-cell *matHeaderCellDef> Credit </th>\r\n          <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"element.type=='credit'\"> {{element.value | currency:'USD' }} </span> </td>\r\n        </ng-container>\r\n\r\n        <!-- Symbol Column -->\r\n        <ng-container matColumnDef=\"Type\">\r\n          <th mat-header-cell *matHeaderCellDef> Type </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"actions\">\r\n          <th mat-header-cell *matHeaderCellDef> Actions </th>\r\n          <td mat-cell *matCellDef=\"let element\">\r\n             <mat-icon routerLink=\"/view/{{element.position}}\" >visibility</mat-icon>&nbsp;\r\n             <mat-icon>edit</mat-icon>&nbsp;\r\n             <mat-icon>delete_sweep</mat-icon>\r\n          </td>\r\n        </ng-container>\r\n        \r\n        \r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n        \r\n      </table>\r\n    \r\n  </mat-card>\r\n\r\n</div>\r\n\r\n\r\n<div style=\"position: fixed;top: 87%;right: 5%;\" class=\"row\" *ngIf=\"data.isAuthenticated\">\r\n  <div class=\"pull-right\">\r\n    <button mat-fab color=\"primary\" (click)=\"openDialog()\"><mat-icon>add</mat-icon></button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\n  <mat-card>  \n    \n    <div class=\"row\">\n      <div class=\"col-md-3\" *ngIf=\"spinner\">        \n        <mat-spinner  color=\"primary\" diameter=\"70\"></mat-spinner>\n      </div>\n      <div class=\"col-md-3\" *ngIf=\"!spinner\">      \n        <mat-icon style=\"font-size: 48px;color:black;\">monetization_on</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n        <span style=\"margin-left:2%;font-size: 28px;font-weight:bold;color:black;\">{{totalDebit | currency:'USD'}}</span>\n        <h5 style=\"margin-left:12%;margin-top:0%;color:black;\">Debit</h5>\n      </div>\n      <div class=\"col-md-3\" *ngIf=\"spinner\">        \n          <mat-spinner  color=\"primary\" diameter=\"70\"></mat-spinner>\n      </div>\n      <div class=\"col-md-3\" *ngIf=\"!spinner\">      \n        <mat-icon style=\"font-size: 48px;color:black;\">shopping_cart</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n        <span style=\"margin-left:2%;font-size: 28px;font-weight:bold;color:black;\">{{totalCredit | currency:'USD' }}</span>\n        <h5 style=\"margin-left:12%;margin-top:0%;color:black;\">Credit</h5>\n      </div>\n      <div class=\"col-md-3\">\n        <mat-icon style=\"font-size: 48px;color:black;\">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n        <span style=\"font-size: 28px;font-weight:bold;color:black;\">35%</span>\n        <h5 style=\"margin-left:10%;margin-top:0%;color:black;\">Growth</h5>\n      </div>\n      <div class=\"col-md-3\">      \n        <mat-icon style=\"font-size: 48px;color:black;\">group</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n        <span style=\"margin-left:3%;font-size: 28px;font-weight:bold;color:black;\">12%</span>\n        <h5 style=\"margin-left:13%;margin-top:0%;color:black;\">New Users</h5>\n      </div>\n    </div>    \n    \n  </mat-card>\n</div>\n\n<br/>\n\n  <mat-card>\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <mat-form-field style=\"width:100%;\">\n          <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n        </mat-form-field>\n      </div>  \n    </div>      \n  </mat-card>\n\n<br/>\n<div class=\"row\">\n  <mat-card>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      \n      <!--- Note that these columns can be defined in any order.\n        The actual rendered columns are set as a property on the row definition\" -->\n        \n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"date\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.date}} </td>\n        </ng-container>\n        \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\n        </ng-container>\n        \n        <!-- Weight Column -->\n        <ng-container matColumnDef=\"weight\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Debit </th>\n          <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"element.type=='debit'\"> {{element.value | currency:'USD' }} </span> </td>\n        </ng-container>\n        \n        <!-- Symbol Column -->\n        <ng-container matColumnDef=\"symbol\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Credit </th>\n          <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"element.type=='credit'\"> {{element.value | currency:'USD' }} </span> </td>\n        </ng-container>\n\n        <!-- Symbol Column -->\n        <ng-container matColumnDef=\"Type\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"actions\">\n          <th mat-header-cell *matHeaderCellDef > Actions </th>\n          <td mat-cell *matCellDef=\"let element\">\n             <mat-icon routerLink=\"/view/{{element.position}}\" >visibility</mat-icon>&nbsp;\n             <mat-icon>edit</mat-icon>&nbsp;\n             <mat-icon>delete_sweep</mat-icon>\n          </td>\n        </ng-container>\n        \n        \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n        \n      </table>\n\n      <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n    \n  </mat-card>\n\n</div>\n\n\n<div style=\"position: fixed;top: 87%;right: 5%;\" class=\"row\" *ngIf=\"data.isAuthenticated\">\n  <div class=\"pull-right\">\n    <button mat-fab color=\"primary\" (click)=\"openDialog()\"><mat-icon>add</mat-icon></button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -824,7 +827,7 @@ module.exports = "<div class=\"row\">\r\n  <mat-card>  \r\n    \r\n    <div clas
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  width: 100%; }\n"
+module.exports = "table {\n  width: 100%; }\n\nsearch {\n  width: 100%; }\n"
 
 /***/ }),
 
@@ -842,6 +845,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _dialog_overview_example_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dialog-overview-example-dialog */ "./src/app/master/dialog-overview-example-dialog.ts");
 /* harmony import */ var src_app_model_rest_datasource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/model/rest.datasource */ "./src/app/model/rest.datasource.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -855,12 +859,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var MasterComponent = /** @class */ (function () {
-    function MasterComponent(dialog, data) {
+    function MasterComponent(dialog, data, route) {
         this.dialog = dialog;
         this.data = data;
+        this.route = route;
         this.title = 'my-app';
         this.displayedColumns = ['position', 'date', 'name', 'weight', 'symbol', 'actions'];
+        this.spinner = true;
     }
     MasterComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -869,6 +877,12 @@ var MasterComponent = /** @class */ (function () {
         setTimeout(function () {
             _this.totalCredit = _this.data.dashboard[0].total;
             _this.totalDebit = _this.data.dashboard[1].total;
+            _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.data.messages);
+            _this.dataSource.sort = _this.sort;
+            _this.dataSource.paginator = _this.paginator;
+        }, 1000);
+        setTimeout(function () {
+            _this.spinner = false;
         }, 1000);
     };
     MasterComponent.prototype.openDialog = function () {
@@ -882,13 +896,24 @@ var MasterComponent = /** @class */ (function () {
             _this.animal = result;
         });
     };
+    MasterComponent.prototype.applyFilter = function (filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"]),
+        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
+    ], MasterComponent.prototype, "paginator", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"]),
+        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"])
+    ], MasterComponent.prototype, "sort", void 0);
     MasterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'master',
             template: __webpack_require__(/*! ./master.component.html */ "./src/app/master/master.component.html"),
             styles: [__webpack_require__(/*! ./master.component.scss */ "./src/app/master/master.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], src_app_model_rest_datasource__WEBPACK_IMPORTED_MODULE_3__["RestSourceData"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], src_app_model_rest_datasource__WEBPACK_IMPORTED_MODULE_3__["RestSourceData"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], MasterComponent);
     return MasterComponent;
 }());
@@ -904,7 +929,7 @@ var MasterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n            <h1>{{masterData.description}}</h1>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\" >\r\n            <mat-form-field>\r\n                <input matInput [(ngModel)]=\"masterData.date\" name=\"date\" placeholder=\"Date\" disabled>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            <mat-form-field>\r\n                    <input matInput [(ngModel)]=\"masterData.description\" name=\"description\" placeholder=\"Description\" disabled >\r\n            </mat-form-field>                        \r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\" >\r\n            <mat-form-field>\r\n                <input matInput *ngIf=\"masterData.type=='debit'\" [(ngModel)]=\"masterData.value\" name=\"debit\" placeholder=\"Debit\" disabled>\r\n                <input matInput *ngIf=\"masterData.type=='credit'\" value=\"0.00\" placeholder=\"Debit\" disabled>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            <mat-form-field>\r\n                    <input  matInput *ngIf=\"masterData.type=='debit'\" value=\"0.00\" placeholder=\"Credit\" disabled >\r\n                    <input  matInput *ngIf=\"masterData.type=='credit'\" [(ngModel)]=\"masterData.value\" name=\"credit\" placeholder=\"Credit\" disabled >\r\n            </mat-form-field>                        \r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\n    <div class=\"row\">\n            <h1>{{masterData.description}}</h1>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-md-6\" >\n            <mat-form-field>\n                <input matInput [(ngModel)]=\"masterData.date\" name=\"date\" placeholder=\"Date\" disabled>\n            </mat-form-field>\n        </div>\n        <div class=\"col-md-6\">\n            <mat-form-field>\n                    <input matInput [(ngModel)]=\"masterData.description\" name=\"description\" placeholder=\"Description\" disabled >\n            </mat-form-field>                        \n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-md-6\" >\n            <mat-form-field>\n                <input matInput *ngIf=\"masterData.type=='debit'\" [(ngModel)]=\"masterData.value\" name=\"debit\" placeholder=\"Debit\" disabled>\n                <input matInput *ngIf=\"masterData.type=='credit'\" value=\"0.00\" placeholder=\"Debit\" disabled>\n            </mat-form-field>\n        </div>\n        <div class=\"col-md-6\">\n            <mat-form-field>\n                    <input  matInput *ngIf=\"masterData.type=='debit'\" value=\"0.00\" placeholder=\"Credit\" disabled >\n                    <input  matInput *ngIf=\"masterData.type=='credit'\" [(ngModel)]=\"masterData.value\" name=\"credit\" placeholder=\"Credit\" disabled >\n            </mat-form-field>                        \n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -957,7 +982,6 @@ var ViewComponent = /** @class */ (function () {
             this.position = this.route.snapshot.params['id'];
             var filteredData = this.data.messages.filter(function (master) { return master.position.indexOf(_this.position) !== -1; });
             this.masterData = filteredData[0];
-            console.log(this.position);
         }
     };
     ViewComponent = __decorate([
@@ -1006,19 +1030,18 @@ var RestSourceData = /** @class */ (function () {
         this.route = route;
         this.messages = [];
         this.dashboard = [];
-        this.users = [];
         this.TOKEN_KEY = 'token';
-        this.authPath = 'http://159.203.156.208:4201';
+        this.authPath = 'http://localhost:4201';
     }
     RestSourceData.prototype.getMessage = function () {
         var _this = this;
-        this.http.get(this.authPath + '/posts').subscribe(function (res) {
+        this.http.get(this.authPath + '/posts/' + this.token).subscribe(function (res) {
             _this.messages = res;
         });
     };
     RestSourceData.prototype.getDashboard = function () {
         var _this = this;
-        this.http.get(this.authPath + '/recapposts').subscribe(function (res) {
+        this.http.get(this.authPath + '/recapposts/' + this.token).subscribe(function (res) {
             _this.dashboard = res;
         });
     };
@@ -1052,11 +1075,11 @@ var RestSourceData = /** @class */ (function () {
     });
     RestSourceData.prototype.logout = function () {
         localStorage.removeItem(this.TOKEN_KEY);
+        this.route.navigateByUrl('/login');
     };
     RestSourceData.prototype.loginUser = function (loginData) {
         var _this = this;
         this.http.post(this.authPath + '/login', loginData).subscribe(function (res) {
-            console.log(res);
             localStorage.setItem(_this.TOKEN_KEY, res.token);
             if (_this.isAuthenticated) {
                 _this.route.navigateByUrl("/");
@@ -1070,7 +1093,6 @@ var RestSourceData = /** @class */ (function () {
     RestSourceData.prototype.sendUserRegistration = function (regData) {
         var _this = this;
         this.http.post(this.authPath + '/register', regData).subscribe(function (res) {
-            console.log(res);
             localStorage.setItem(_this.TOKEN_KEY, res.token);
             if (_this.isAuthenticated) {
                 _this.route.navigateByUrl("/");
@@ -1085,6 +1107,53 @@ var RestSourceData = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], RestSourceData);
     return RestSourceData;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.guard.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/auth.guard.service.ts ***!
+  \************************************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_model_rest_datasource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/model/rest.datasource */ "./src/app/model/rest.datasource.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(router, data) {
+        this.router = router;
+        this.data = data;
+    }
+    AuthGuard.prototype.canActivate = function (route, state) {
+        if (!this.data.isAuthenticated) {
+            this.router.navigateByUrl('/login');
+        }
+        return true;
+    };
+    AuthGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_model_rest_datasource__WEBPACK_IMPORTED_MODULE_2__["RestSourceData"]])
+    ], AuthGuard);
+    return AuthGuard;
 }());
 
 
