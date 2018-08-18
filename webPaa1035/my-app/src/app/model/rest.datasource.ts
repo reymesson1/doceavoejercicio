@@ -10,8 +10,9 @@ export class RestSourceData{
   messages = []
   dashboard = []  
   TOKEN_KEY = 'token'
-  authPath = 'http://159.203.156.208:4201'
-  //authPath = 'http://localhost:4201'
+  //authPath = 'http://159.203.156.208:4201'
+  authPath = 'http://localhost:4201'
+  hash
 
   getMessage() {      
 
@@ -76,6 +77,12 @@ export class RestSourceData{
             console.log("Registration Failed")
         }     
     })    
+  }
+
+  setPassword(accData) {
+    this.http.post<any>(this.authPath + '/changepassword', accData).subscribe(res =>{ 
+          console.log(res);
+    })
   }
   
 }

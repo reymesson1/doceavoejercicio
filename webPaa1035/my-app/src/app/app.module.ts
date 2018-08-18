@@ -53,6 +53,7 @@ import { RegistrationComponent } from "./admin/registration.component";
 import { LoginComponent } from "./admin/login.component";
 import { ViewComponent } from "./master/view.component";
 import { RestSourceData }  from "./model/rest.datasource";
+import { AccountComponent } from "./admin/account.component";
 
 import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-dialog";
 
@@ -60,13 +61,13 @@ import { AuthGuard } from "./services/auth.guard.service";
 
 @NgModule({ 
   declarations: [
-     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, //MatSpinner
+     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, AccountComponent
   ],
   imports: [
     MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
-    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule, MatProgressSpinnerModule,
+    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule, MatProgressSpinnerModule,   MatTabsModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "master", component: MasterComponent, canActivate: [ AuthGuard ] },      
@@ -75,6 +76,7 @@ import { AuthGuard } from "./services/auth.guard.service";
       { path: "login", component: LoginComponent },
       { path: "view", component: ViewComponent },
       { path: "view/:id", component: ViewComponent },
+      { path: "account", component: AccountComponent },
       { path: "**", redirectTo: '/master' }  
     ])
   ],

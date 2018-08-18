@@ -25,11 +25,11 @@ app.get('/posts/:id',  async(req, res) =>{
     res.send(posts);
 });
 
+
 app.get('/recapposts/:id',  async(req, res) =>{
 
     var decode = jwt.decode(req.params.id,'123');
     var author = decode.sub    
-    //var posts = await Post.aggregate([{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
 
     const ObjectId = mongoose.Types.ObjectId;    
 
@@ -97,6 +97,13 @@ app.post('/login', async (req, res)=>{
     })
 
 })
+
+
+app.post('/changepassword',  async(req, res) =>{
+    
+    console.log(req.body);
+
+});
 
 mongoose.connect('mongodb://localhost:27017/meanstack',(err)=>{
   if(!err){
