@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var User = require('./models/user.js');
 var Post = require('./models/post.js');
+var Post1 = require('./models/post1.js');
 
 //app.use(express.static('static'));
 app.use(express.static('./dist/my-app'));
@@ -22,6 +23,14 @@ app.get('/posts/:id',  async(req, res) =>{
     var decode = jwt.decode(req.params.id,'123');
     var author = decode.sub
     var posts = await Post.find({author})
+    res.send(posts);
+});
+
+app.get('/posts1/:id',  async(req, res) =>{
+        
+    var decode = jwt.decode(req.params.id,'123');
+    var author = decode.sub
+    var posts = await Post1.find({author})
     res.send(posts);
 });
 
@@ -45,6 +54,24 @@ app.post('/post', (req, res)=>{
     postData.author = decode.sub
 
     var post = new Post(postData)
+
+    post.save((err, result)=>{
+        if(err){
+            console.error('Saving Post Error');
+            return res.status(500).send({message: 'Saving Post Causing an error'});
+        }
+
+        res.sendStatus(200);
+    })
+})
+
+app.post('/post1', (req, res)=>{
+
+    var postData = req.body    
+    var decode = jwt.decode(req.body.token,'123')
+    postData.author = decode.sub
+
+    var post = new Post1(postData)
 
     post.save((err, result)=>{
         if(err){
@@ -104,6 +131,37 @@ app.post('/changepassword',  async(req, res) =>{
     console.log(req.body);
 
 });
+
+app.get('/stategroups/:id',  async(req, res) =>{
+    
+        var decode = jwt.decode(req.params.id,'123');
+        var author = decode.sub    
+    
+        const ObjectId = mongoose.Types.ObjectId;    
+    
+        var posts = await Post1.aggregate([{"$match":{"author":ObjectId(author)}},{"$group":{"_id":{"$substr":["$description",0,1]},"names":{"$push":"$description"}}},{"$project":{"letter":"$_id","names":"$names","_id":0}},{"$sort":{"names":1}}])
+    
+        res.send(posts);
+});
+
+app.get('/whois/:id',  async(req, res) =>{
+
+    var decode = jwt.decode(req.params.id,'123');
+    var author = decode.sub
+
+    const ObjectId = mongoose.Types.ObjectId;   
+
+    var user = await User.findOne(ObjectId(author))
+   
+    res.send(user);
+});
+
+app.get('/master',function(req,res){res.redirect('http://localhost:4201/');})
+app.get('/detail',function(req,res){res.redirect('http://localhost:4201/');})
+app.get('/item1',function(req,res){res.redirect('http://localhost:4201/');})
+app.get('/account',function(req,res){res.redirect('http://localhost:4201/');})
+
+
 
 mongoose.connect('mongodb://localhost:27017/meanstack',(err)=>{
   if(!err){

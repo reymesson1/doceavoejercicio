@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DialogOverviewExampleDialog } from "./dialog-overview-example-dialog";
+import { DialogOverviewExampleDialog1 } from "./dialog-overview-example-dialog1";
 import { RestSourceData } from 'src/app/model/rest.datasource';
 import { DataSource } from '@angular/cdk/collections';
 import {Sort} from '@angular/material';
-// import { MatSpinner } from '@angular/material';
 import {MatSort,MatPaginator, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 
@@ -14,39 +13,28 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'master',
-  templateUrl: './master.component.html',
-  styleUrls: ['./master.component.scss']
+  selector: 'item1',
+  templateUrl: './item1.component.html',
+  styleUrls: ['./item1.component.scss']
 })
-export class MasterComponent implements OnInit {
-  title = 'my-app';  
+export class Item1Component {
+  title = 'my-app';
   displayedColumns: string[] = ['position', 'date','name', 'weight', 'symbol','actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   animal: string;
-  name: string;
-  totalCredit;
-  totalDebit;
-  totalItem1;
-  totalItem2;
+  name: string;  
   spinner: boolean = true;
   dataSource;
-    
+
   constructor(public dialog: MatDialog, public data: RestSourceData,private route:Router,) {}
-      
-    ngOnInit(){ 
+  
+  ngOnInit(){
     
-    this.data.getMessage();
-    this.data.getDashboard();
-    this.data.getStateGroups();
-    this.data.getProfile();
+    this.data.getMessage1();
     
     setTimeout(() => {
-      this.totalCredit = this.data.dashboard[0].total;
-      this.totalDebit = this.data.dashboard[3].total;
-      this.totalItem1 = this.data.dashboard[2].total;
-      this.totalItem2 = this.data.dashboard[1].total;
-      this.dataSource = new MatTableDataSource<any>(this.data.messages);
+      this.dataSource = new MatTableDataSource<any>(this.data.messages1);
       this.dataSource.sort = this.sort;  
       this.dataSource.paginator = this.paginator;
     }, 2000);
@@ -55,11 +43,12 @@ export class MasterComponent implements OnInit {
       this.spinner = false;
     }, 2000);
 
+
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '350px',
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog1, {
+      width: '250px',
       data: {name: this.name, animal: this.animal}
     });
     
@@ -72,6 +61,4 @@ export class MasterComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 }

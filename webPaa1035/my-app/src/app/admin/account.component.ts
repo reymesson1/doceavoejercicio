@@ -12,8 +12,15 @@ export class AccountComponent {
   backgroundColor: string = 'white'; 
   btnToggle=false;
   accountData : any = {};
+  profileName
   
   constructor(private route: Router,private data: RestSourceData){}
+
+  ngOnInit(){    
+    this.data.getProfile();
+    this.profileName = this.data.whois    
+    console.log(this.data.whois.username);
+  }
 
   toggle(){
     

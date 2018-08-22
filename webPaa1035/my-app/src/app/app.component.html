@@ -6,21 +6,10 @@
         <button mat-button routerLink="/detail">Detail</button>
       </div>
       <div class="col-md-4">
-          <button mat-button [matMenuTriggerFor]="menu">Report</button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>        
+          <menu1></menu1>
     </div>
     <div class="col-md-offset-4">        
-        <button mat-button [matMenuTriggerFor]="menu" *ngIf="data.isAuthenticated" >          
-          <mat-icon>account_circle</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/account" ><mat-icon>work</mat-icon>Profile</button>
-          <button mat-menu-item><mat-icon>settings</mat-icon>Configuration</button>
-          <button mat-menu-item (click)="logoff()"><mat-icon>input</mat-icon>Log out</button>
-        </mat-menu> 
+        <menu2></menu2>
     </div>
         
   </mat-toolbar>

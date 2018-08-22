@@ -57,17 +57,24 @@ import { AccountComponent } from "./admin/account.component";
 
 import { DialogOverviewExampleDialog } from "./master/dialog-overview-example-dialog";
 
+import { Menu1Component } from "./menu/menu1.component";
+import { Menu2Component } from "./menu/menu2.component";
+
+import { Item1Component } from "./item/item1.component";
+import { DialogOverviewExampleDialog1 } from "./item/dialog-overview-example-dialog1";
+import { ReportComponent } from "./report/report.component";
+
 import { AuthGuard } from "./services/auth.guard.service";
 
 @NgModule({ 
   declarations: [
-     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, AccountComponent
+     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, AccountComponent, Menu1Component, Menu2Component, Item1Component, DialogOverviewExampleDialog1, ReportComponent,
   ],
   imports: [
     MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatGridListModule, 
     MatDividerModule, MatCardModule, MatTableModule, MatTooltipModule,  MatFormFieldModule,  MatRadioModule,MatOptionModule,MatSelectModule, MatSliderModule,  MatInputModule,  
-    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule, MatProgressSpinnerModule,   MatTabsModule,
+    MatDialogModule, MatMenuModule, MatProgressBarModule,MatSortModule, MatPaginatorModule, MatProgressSpinnerModule,   MatTabsModule, MatAutocompleteModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "master", component: MasterComponent, canActivate: [ AuthGuard ] },      
@@ -77,10 +84,12 @@ import { AuthGuard } from "./services/auth.guard.service";
       { path: "view", component: ViewComponent },
       { path: "view/:id", component: ViewComponent },
       { path: "account", component: AccountComponent },
+      { path: "item1", component: Item1Component },
+      { path: "report", component: ReportComponent },
       { path: "**", redirectTo: '/master' }  
     ])
   ],
   providers: [RestSourceData, AuthGuard],
-  bootstrap: [AppComponent, DialogOverviewExampleDialog]
+  bootstrap: [AppComponent, DialogOverviewExampleDialog, DialogOverviewExampleDialog1]
 })
 export class AppModule { }

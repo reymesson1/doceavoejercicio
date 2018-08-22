@@ -1,60 +1,23 @@
-<div class="row">
-  <mat-card>  
-    
-    <div class="row">
-      <div class="col-md-3 col-sm-1" *ngIf="spinner">        
-        <mat-spinner  color="primary" diameter="70"></mat-spinner>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="!spinner">      
-        <mat-icon style="font-size: 48px;color:black;">monetization_on</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">{{totalDebit | currency:'USD'}}</span>
-        <h5 style="margin-left:12%;margin-top:0%;color:black;">Debit</h5>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="spinner">        
-          <mat-spinner  color="primary" diameter="70"></mat-spinner>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="!spinner">      
-        <mat-icon style="font-size: 48px;color:black;">shopping_cart</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:2%;font-size: 28px;font-weight:bold;color:black;">{{totalCredit | currency:'USD' }}</span>
-        <h5 style="margin-left:12%;margin-top:0%;color:black;">Credit</h5>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="spinner">        
-          <mat-spinner  color="primary" diameter="70"></mat-spinner>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="!spinner">
-        <mat-icon style="font-size: 48px;color:black;">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="font-size: 28px;font-weight:bold;color:black;">{{totalItem1}}%</span>
-        <h5 style="margin-left:10%;margin-top:0%;color:black;">Growth</h5>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="spinner">        
-          <mat-spinner  color="primary" diameter="70"></mat-spinner>
-      </div>
-      <div class="col-md-3 col-sm-1" *ngIf="!spinner">      
-        <mat-icon style="font-size: 48px;color:black;">group</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:3%;font-size: 28px;font-weight:bold;color:black;">{{totalItem2}}%</span>
-        <h5 style="margin-left:13%;margin-top:0%;color:black;">New Users</h5>
-      </div>
-    </div>    
-    
-  </mat-card>
-</div>
-
+<mat-card>
+  <div class="row">
+    <div class="col-md-4 col-sm-2">
+      <mat-form-field style="width:100%;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </mat-form-field>
+    </div>  
+  </div>      
+</mat-card>
 <br/>
+  <mat-card *ngIf="spinner">                  
+    <div class="col-md-6"></div>
+    <div class="col-md-6">        
+      <mat-spinner  color="primary" diameter="70"></mat-spinner>        
+    </div>  
+  </mat-card>  
 
-  <mat-card>
-    <div class="row">
-      <div class="col-md-4 col-sm-2">
-        <mat-form-field style="width:100%;">
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-        </mat-form-field>
-      </div>  
-    </div>      
-  </mat-card>
-
-<br/>
-<div class="row">
-  <div class="col-md-12 col-sm-6">
-    <mat-card>
+<div class="row">  
+  <div class="col-md-12" *ngIf="!spinner">
+    <mat-card>        
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
         
         <!--- Note that these columns can be defined in any order.
@@ -122,3 +85,4 @@
     <button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
   </div>
 </div>
+
