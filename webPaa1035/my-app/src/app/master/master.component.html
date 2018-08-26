@@ -23,16 +23,16 @@
       </div>
       <div class="col-md-3 col-sm-1" *ngIf="!spinner">
         <mat-icon style="font-size: 48px;color:black;">highlight</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="font-size: 28px;font-weight:bold;color:black;">{{totalItem1}}%</span>
-        <h5 style="margin-left:10%;margin-top:0%;color:black;">Growth</h5>
+        <span style="font-size: 28px;font-weight:bold;color:black;">{{totalItem1 | currency:'USD'}}</span>
+        <h5 style="margin-left:10%;margin-top:0%;color:black;">Active</h5>
       </div>
       <div class="col-md-3 col-sm-1" *ngIf="spinner">        
           <mat-spinner  color="primary" diameter="70"></mat-spinner>
       </div>
       <div class="col-md-3 col-sm-1" *ngIf="!spinner">      
         <mat-icon style="font-size: 48px;color:black;">group</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-left:3%;font-size: 28px;font-weight:bold;color:black;">{{totalItem2}}%</span>
-        <h5 style="margin-left:13%;margin-top:0%;color:black;">New Users</h5>
+        <span style="margin-left:3%;font-size: 28px;font-weight:bold;color:black;">{{totalItem2 | currency:'USD'}}</span>
+        <h5 style="margin-left:13%;margin-top:0%;color:black;">Passive</h5>
       </div>
     </div>    
     
@@ -55,7 +55,7 @@
 <div class="row">
   <div class="col-md-12 col-sm-6">
     <mat-card>
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort matSortActive="position" matSortDirection="desc" class="mat-elevation-z8">
         
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
