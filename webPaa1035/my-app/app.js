@@ -144,6 +144,42 @@ app.get('/stategroups/:id',  async(req, res) =>{
         res.send(posts);
 });
 
+app.get('/report/:id',  async(req, res) =>{
+    
+        var decode = jwt.decode(req.params.id,'123');
+        var author = decode.sub    
+    
+        const ObjectId = mongoose.Types.ObjectId;    
+    
+        var posts = await Post.aggregate([{"$match":{"type":"active","author":ObjectId(author)}},{"$group":{"_id":"$item1","total":{"$sum":"$value"}}}])
+    
+        res.send(posts);
+});
+
+app.get('/report1/:id',  async(req, res) =>{
+    
+        var decode = jwt.decode(req.params.id,'123');
+        var author = decode.sub    
+    
+        const ObjectId = mongoose.Types.ObjectId;    
+    
+        var posts = await Post.aggregate([{"$match":{"type":"passive","author":ObjectId(author)}},{"$group":{"_id":"$item1","total":{"$sum":"$value"}}}])
+    
+        res.send(posts);
+});
+
+app.get('/report2/:id',  async(req, res) =>{
+    
+        var decode = jwt.decode(req.params.id,'123');
+        var author = decode.sub    
+    
+        const ObjectId = mongoose.Types.ObjectId;    
+    
+        var posts = await Post.aggregate([{"$match":{"type":"heritage","author":ObjectId(author)}},{"$group":{"_id":"$item1","total":{"$sum":"$value"}}}])
+    
+        res.send(posts);
+});
+
 app.get('/whois/:id',  async(req, res) =>{
 
     var decode = jwt.decode(req.params.id,'123');

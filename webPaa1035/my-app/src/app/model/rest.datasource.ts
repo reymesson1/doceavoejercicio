@@ -11,6 +11,9 @@ export class RestSourceData{
   messages1 = []
   dashboard = []  
   stategroups = []
+  report = []
+  report2 = []
+  report3 = []
   whois : any = {}
   TOKEN_KEY = 'token'
   //authPath = 'http://159.203.156.208:4201'
@@ -123,6 +126,27 @@ export class RestSourceData{
     this.http.get<any>(this.authPath +'/whois/'+this.token).subscribe(res =>{
         
         this.whois = res;
+    })        
+  }
+
+  getReport() {      
+
+    this.http.get<any>(this.authPath +'/report/'+this.token).subscribe(res =>{
+        this.report = res;
+    })        
+  }
+
+  getReport2() {      
+
+    this.http.get<any>(this.authPath +'/report1/'+this.token).subscribe(res =>{
+        this.report2 = res;
+    })        
+  }
+
+  getReport3() {      
+
+    this.http.get<any>(this.authPath +'/report2/'+this.token).subscribe(res =>{
+        this.report3 = res;
     })        
   }
   

@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import { RestSourceData } from 'src/app/model/rest.datasource';
+
 
 @Component({
   selector: 'report',
@@ -12,9 +14,11 @@ export class ReportComponent {
   toggle : boolean = false;
 
   @ViewChild('content') content:ElementRef;
-  constructor() { }
+
+  constructor(private data:RestSourceData) { }
 
   ngOnInit() {
+    console.log(this.data.report);
   }
 
   public captureScreen()

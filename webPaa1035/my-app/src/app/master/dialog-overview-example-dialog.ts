@@ -57,7 +57,7 @@ export class DialogOverviewExampleDialog  implements OnInit {
 
   ngDoCheck(){
     if(this.masterData.type){
-      if(this.masterData.type=="item1"||this.masterData.type=="item2"){        
+      if(this.masterData.type=="active"||this.masterData.type=="passive"||this.masterData.type=="heritage"){        
         this.isItem = true;
       }else{
         this.isItem = false;
