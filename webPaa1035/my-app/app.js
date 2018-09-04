@@ -192,10 +192,10 @@ app.get('/whois/:id',  async(req, res) =>{
     res.send(user);
 });
 
-app.get('/master',function(req,res){res.redirect('http://localhost:4201/');})
-app.get('/detail',function(req,res){res.redirect('http://localhost:4201/');})
-app.get('/item1',function(req,res){res.redirect('http://localhost:4201/');})
-app.get('/account',function(req,res){res.redirect('http://localhost:4201/');})
+app.get('/master',function(req,res){res.redirect('http://159.203.156.208:4201/');})
+app.get('/detail',function(req,res){res.redirect('http://159.203.156.208:4201/');})
+app.get('/item1',function(req,res){res.redirect('http://159.203.156.208:4201/');})
+app.get('/account',function(req,res){res.redirect('http://159.203.156.208:4201/');})
 
 
 
