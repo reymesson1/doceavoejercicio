@@ -12,12 +12,13 @@ export class RestSourceData{
   dashboard = []  
   stategroups = []
   report = []
+  reportsituation = []
   report2 = []
   report3 = []
   whois : any = {}
   TOKEN_KEY = 'token'
-  authPath = 'http://159.203.156.208:4201'
-  //authPath = 'http://localhost:4201'
+  //authPath = 'http://159.203.156.208:4201'
+  authPath = 'http://localhost:4201'
   hash
 
   getMessage() {      
@@ -133,6 +134,12 @@ export class RestSourceData{
 
     this.http.get<any>(this.authPath +'/report/'+this.token).subscribe(res =>{
         this.report = res;
+    })        
+  }
+  getReportSituation() {      
+
+    this.http.get<any>(this.authPath +'/situationreport/'+this.token).subscribe(res =>{
+        this.reportsituation = res;
     })        
   }
 

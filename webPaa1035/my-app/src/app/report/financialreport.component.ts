@@ -5,11 +5,11 @@ import { RestSourceData } from 'src/app/model/rest.datasource';
 
 
 @Component({
-  selector: 'report',
-  templateUrl: './report.component.html',
-  styleUrls: ['./report.component.scss']
+  selector: 'financialreport',
+  templateUrl: './financialreport.component.html',
+  styleUrls: ['./financialreport.component.scss']
 })
-export class ReportComponent {
+export class FinancialReportComponent {
   title = 'my-app';
   toggle : boolean = false;
 

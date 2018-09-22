@@ -43,6 +43,7 @@ export class MasterComponent implements OnInit {
     this.data.getReport();
     this.data.getReport2();
     this.data.getReport3();
+    this.data.getReportSituation();
     
     setTimeout(() => {
       this.totalCredit = this.data.dashboard[0].total;

@@ -1,0 +1,73 @@
+<div id="content" #content>
+  <mat-card>
+    <div class="alert alert-info">
+        <strong>Financial Status Situation Report</strong>
+    </div>
+    <div>
+      <input type="button" value="PRINT" (click)="captureScreen()"/>
+    </div>
+  </mat-card>
+</div>
+
+<div *ngIf="toggle" >
+  <mat-card>
+    <table id="convert" style='width:980px;'>
+      <tr>
+          <td style='padding: 5px 8px 8px;'>
+              <table style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 5px; width: 960px' cellspacing='0'
+                  cellpadding='2' align='center' border='0'>
+                  <tr>
+                      <td>
+                          <a href='http://www.arsadata.se/sv-se/default/'>
+                              <img src='../assets/logo.png' />
+                          </a>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td style='padding: 0px 8px 8px;'>
+              <div style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0);'>
+                  <strong style='margin-left: 15px;font-size:25px;'> Reporte de Estado de Situacion </strong>
+                  <br/>
+                  <br/>
+                  <br />
+                  <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center' border='0'>
+                      <tbody>
+                          <tr style='background-color: #2e5cda; float: left;width:100%;padding-left:5px;'>
+                              <td style='background-color:#2e5cda; padding:5px 0px 5px 0px; float:left; width:99%; margin:5px 0px 5px 5px; font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #fff;'>
+                                  <strong></strong>
+                                  <br/>
+                                  <strong>ESTADO DE SITUACION</strong>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td bgcolor='#efeeee' style='margin:5px 0;width:100%; float:left;'>
+                                  <table style='width:100%; font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 5px;margin:5px;'>
+                                      <tr *ngFor="let rep of this.data.reportsituation">
+                                            <td align='left' width='35%'>{{rep._id}}</td>
+                                            <td align='left' width='65%'>{{rep.total | currency:'USD'}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td align='left'>TOTAL </td>
+                                          <td align='left'>-</td>
+                                      </tr>
+                                  </table>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+          </div>
+          </td>
+      </tr>
+      <tr>
+          <td style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 20px 8px 8px;'></td>
+      </tr>
+      <tr>
+          <td style='padding: 0px;width:100%;'></td>
+      </tr>
+  </table>
+  </mat-card>
+</div>
+

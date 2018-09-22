@@ -62,13 +62,14 @@ import { Menu2Component } from "./menu/menu2.component";
 
 import { Item1Component } from "./item/item1.component";
 import { DialogOverviewExampleDialog1 } from "./item/dialog-overview-example-dialog1";
-import { ReportComponent } from "./report/report.component";
 
 import { AuthGuard } from "./services/auth.guard.service";
+import { FinancialReportComponent } from 'src/app/report/financialreport.component';
+import { SituationReportComponent } from 'src/app/report/situationreport.component';
 
 @NgModule({ 
   declarations: [
-     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, AccountComponent, Menu1Component, Menu2Component, Item1Component, DialogOverviewExampleDialog1, ReportComponent,
+     AppComponent,HomeComponent, MasterComponent, DetailComponent, RegistrationComponent, LoginComponent, DialogOverviewExampleDialog, ViewComponent, AccountComponent, Menu1Component, Menu2Component, Item1Component, DialogOverviewExampleDialog1, SituationReportComponent, FinancialReportComponent
   ],
   imports: [
     MomentModule,BrowserModule, HttpClientModule,FormsModule, ReactiveFormsModule, BrowserAnimationsModule, 
@@ -85,7 +86,8 @@ import { AuthGuard } from "./services/auth.guard.service";
       { path: "view/:id", component: ViewComponent },
       { path: "account", component: AccountComponent },
       { path: "item1", component: Item1Component },
-      { path: "report", component: ReportComponent },
+      { path: "situationreport", component: SituationReportComponent },
+      { path: "financialreport", component: FinancialReportComponent },
       { path: "**", redirectTo: '/master' }  
     ])
   ],
